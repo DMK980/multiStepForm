@@ -1,0 +1,17 @@
+/* sidebar styling */
+aside{
+    background-image:url("../../assets/images/bg-sidebar-mobile.svg");
+    min-height: 172px;
+    padding: 2rem 0 0 0;
+    display: flex;
+    justify-content: center;
+}
+nav{
+    display: flex;
+    gap: 1.5rem;
+    height: fit-content;
+    width: fit-content;
+}
+a{
+    border-radius: 50%;
+}

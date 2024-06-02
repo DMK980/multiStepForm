@@ -69,3 +69,45 @@
         font-size: 12px;
     }
 }
+@media screen and (min-width:1024px) {
+    .aside{
+        height: 100%;
+        padding: 4rem 0 0 2rem;
+        background-size: cover;
+    }
+    .aside nav{
+        gap: 2rem;
+    }
+    .aside nav button div h4{
+        font-size: 15px;
+    }
+    .aside nav button div p{
+        font-size: 17px;
+    }
+    .aside nav button span{
+        padding: .5rem .85rem;
+        font-size: 20px;
+    } 
+}
+@media screen and (min-width:2560px) {
+    .aside{
+        height: 100%;
+        width: 400px;
+        padding: 4rem 0 0 2rem;
+        background-size: cover;
+    }
+    .aside nav{
+        gap: 3.5rem;
+    }
+    .aside nav button div h4{
+        font-size: 25px;
+    }
+    .aside nav button div p{
+        font-size: 28px;
+    }
+    .aside nav button span{
+        padding: .5rem 1rem;
+        font-size: 28px;
+    } 
+    
+}

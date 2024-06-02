@@ -1,18 +1,18 @@
 import React,{useReducer} from 'react'
-import appcss from "./App.module.css"
 import { store,initialState,reducer } from './state.jsx'
 import Sidebar from './components/sidebar/Sidebar.jsx'
+import appcss from "./app.module.css"
 
 const App = () => {
 
   const [state,dispatch] = useReducer(reducer,initialState)
 
   return (
-    <store.Provider value={[state,dispatch]}>
-      <main>
-        <Sidebar/>
-      </main>
-    </store.Provider>
+    <main className={appcss.main}>
+      <store.Provider value={[state,dispatch]}>
+          <Sidebar/>
+      </store.Provider>
+    </main>
   )
 }
 

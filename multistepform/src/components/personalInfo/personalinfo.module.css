@@ -64,13 +64,13 @@
     visibility: hidden;
 }
 /* error */
-.error p{
+.errorshown p{
     visibility: visible !important;
 }
-.error input{
+.errorshown input{
     border: 1px solid var(--Strawberryred) !important;
 }
-.error input::placeholder{
+.errorshown input::placeholder{
     color: var(--Strawberryred) !important;
 }
 @media screen and (min-width:768px) {

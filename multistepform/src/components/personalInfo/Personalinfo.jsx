@@ -5,19 +5,49 @@ import { store } from '../../state'
 const Personalinfo = () => {
     
     const [state,dispatch] = useContext(store)
-    let {activelink,error,name,emailaddress,phonenumber} = state
+    let {activelink,error,name,emailinput,phonenumber} = state
     let fieldset = useRef()
     const visible = activelink == "personal info"? "fieldset":"fieldsethidden"
     
+    useEffect(() => {
+        let childrenoffieldset = fieldset.current.children
+        // error handling
+        for(let x=0; x < childrenoffieldset.length;x++){
+            if(childrenoffieldset[x].id == "name_container" && !name &&
+            !childrenoffieldset[x].classList.contains(`${personalinfocss.errorshown}`)){
+                childrenoffieldset[x].classList.add(`${personalinfocss.errorshown}`)
+            }else if(childrenoffieldset[x].id == "name_container" && name &&
+            childrenoffieldset[x].classList.contains(`${personalinfocss.errorshown}`)){
+                childrenoffieldset[x].classList.remove(`${personalinfocss.errorshown}`)
+            }else if(childrenoffieldset[x].id == "email_container" && !emailinput &&
+            !childrenoffieldset[x].classList.contains(`${personalinfocss.errorshown}`)){
+                childrenoffieldset[x].classList.add(`${personalinfocss.errorshown}`)
+            }else if(childrenoffieldset[x].id == "email_container" && emailinput &&
+            childrenoffieldset[x].classList.contains(`${personalinfocss.errorshown}`)){
+                childrenoffieldset[x].classList.remove(`${personalinfocss.errorshown}`)
+            }else if(childrenoffieldset[x].id == "telephone_container" && !phonenumber &&
+            !childrenoffieldset[x].classList.contains(`${personalinfocss.errorshown}`)){
+                childrenoffieldset[x].classList.add(`${personalinfocss.errorshown}`)
+            }else if(childrenoffieldset[x].id == "telephone_container" && phonenumber &&
+            childrenoffieldset[x].classList.contains(`${personalinfocss.errorshown}`)){
+                childrenoffieldset[x].classList.remove(`${personalinfocss.errorshown}`)
+            }
+        }
+        return () => {
+            
+        };
+    }, [name,emailinput,phonenumber]);
+
     const onchange = (e)=>{
         if(e.target.id == "name"){
-            dispatch({type:"INFOINPUT",payload:{name:e.target.value}})
+            dispatch({type:"NAMEUPDATE",payload:{name:e.target.value}})
         }
         if(e.target.id == "email"){
-            dispatch({type:"INFOINPUT",payload:{emailaddress:e.target.value}})
+            console.log(e.target.value)
+            dispatch({type:"EMAILUPDATE",payload:{emailinput:e.target.value}})
         }
-        if(e.target.id == "telephone"){
-            dispatch({type:"INFOINPUT",payload:{phonenumber:e.target.value}})
+        if(e.target.id == "telephone_number"){
+            dispatch({type:"PHONEUPDATE",payload:{phonenumber:e.target.value}})
         }
     }
 
@@ -38,7 +68,7 @@ const Personalinfo = () => {
             <section id="telephone_container">
                 <label htmlFor="telephone number">Phone Number</label>
                 <p>This field is required</p>
-                <input id="telephone number"onChange={onchange}type="tel"placeholder='e.g.+1 234 567 890' required/>
+                <input id="telephone_number"onChange={onchange}type="tel"placeholder='e.g.+1 234 567 890' required/>
             </section>
         </fieldset>
     )

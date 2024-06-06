@@ -12,31 +12,33 @@ const Personalinfo = () => {
     useEffect(() => {
         let childrenoffieldset = fieldset.current.children
         // error handling
-        for(let x=0; x < childrenoffieldset.length;x++){
-            if(childrenoffieldset[x].id == "name_container" && !name &&
-            !childrenoffieldset[x].classList.contains(`${personalinfocss.errorshown}`)){
-                childrenoffieldset[x].classList.add(`${personalinfocss.errorshown}`)
-            }else if(childrenoffieldset[x].id == "name_container" && name &&
-            childrenoffieldset[x].classList.contains(`${personalinfocss.errorshown}`)){
-                childrenoffieldset[x].classList.remove(`${personalinfocss.errorshown}`)
-            }else if(childrenoffieldset[x].id == "email_container" && !emailinput &&
-            !childrenoffieldset[x].classList.contains(`${personalinfocss.errorshown}`)){
-                childrenoffieldset[x].classList.add(`${personalinfocss.errorshown}`)
-            }else if(childrenoffieldset[x].id == "email_container" && emailinput &&
-            childrenoffieldset[x].classList.contains(`${personalinfocss.errorshown}`)){
-                childrenoffieldset[x].classList.remove(`${personalinfocss.errorshown}`)
-            }else if(childrenoffieldset[x].id == "telephone_container" && !phonenumber &&
-            !childrenoffieldset[x].classList.contains(`${personalinfocss.errorshown}`)){
-                childrenoffieldset[x].classList.add(`${personalinfocss.errorshown}`)
-            }else if(childrenoffieldset[x].id == "telephone_container" && phonenumber &&
-            childrenoffieldset[x].classList.contains(`${personalinfocss.errorshown}`)){
-                childrenoffieldset[x].classList.remove(`${personalinfocss.errorshown}`)
+        if(error == "error"){
+            for(let x=0; x < childrenoffieldset.length;x++){
+                if(childrenoffieldset[x].id == "name_container" && !name &&
+                !childrenoffieldset[x].classList.contains(`${personalinfocss.errorshown}`)){
+                    childrenoffieldset[x].classList.add(`${personalinfocss.errorshown}`)
+                }else if(childrenoffieldset[x].id == "name_container" && name &&
+                childrenoffieldset[x].classList.contains(`${personalinfocss.errorshown}`)){
+                    childrenoffieldset[x].classList.remove(`${personalinfocss.errorshown}`)
+                }else if(childrenoffieldset[x].id == "email_container" && !emailinput &&
+                !childrenoffieldset[x].classList.contains(`${personalinfocss.errorshown}`)){
+                    childrenoffieldset[x].classList.add(`${personalinfocss.errorshown}`)
+                }else if(childrenoffieldset[x].id == "email_container" && emailinput &&
+                childrenoffieldset[x].classList.contains(`${personalinfocss.errorshown}`)){
+                    childrenoffieldset[x].classList.remove(`${personalinfocss.errorshown}`)
+                }else if(childrenoffieldset[x].id == "telephone_container" && !phonenumber &&
+                !childrenoffieldset[x].classList.contains(`${personalinfocss.errorshown}`)){
+                    childrenoffieldset[x].classList.add(`${personalinfocss.errorshown}`)
+                }else if(childrenoffieldset[x].id == "telephone_container" && phonenumber &&
+                childrenoffieldset[x].classList.contains(`${personalinfocss.errorshown}`)){
+                    childrenoffieldset[x].classList.remove(`${personalinfocss.errorshown}`)
+                }
             }
         }
         return () => {
             
         };
-    }, [name,emailinput,phonenumber]);
+    }, [error,name,phonenumber,emailinput]);
 
     const onchange = (e)=>{
         if(e.target.id == "name"){

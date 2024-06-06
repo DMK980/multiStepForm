@@ -3,11 +3,18 @@ import {createContext } from "react";
 export const store = createContext()
 
 export const initialState = {
-    activelink: "personal info",
+    activelink: "select your plan",
     name: "",
     emailinput: "",
     phonenumber: "",
-    error: "noerror"
+    error: "noerror",
+    plan: "monthly",
+    selectedplan: "arcade",
+    planpricing: {
+        arcade:{monthly : "$9",yearly : "$90"},
+        advanced:{monthly : "$12",yearly : "$120"},
+        pro:{monthly : "$15",yearly : "$150"}
+    }
 }
 
 export const reducer = (state,action) =>{
@@ -35,6 +42,14 @@ export const reducer = (state,action) =>{
                 return {...state,phonenumber:action.payload.phonenumber}
             } else {
                 return {...state,phonenumber:""}
+            }
+        case "CHANGEPLAN":
+            return {...state,selectedplan:action.payload}
+        case "SWITCHPLAN":
+            if(state.plan == "monthly"){
+                return {...state,plan:"yearly"}
+            }else{
+                return {...state,plan:"monthly"}
             }
     }
 }

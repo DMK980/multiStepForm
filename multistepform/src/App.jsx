@@ -3,6 +3,7 @@ import { store,initialState,reducer } from './state.jsx'
 import Sidebar from './components/sidebar/Sidebar.jsx'
 import appcss from "./app.module.css"
 import Personalinfo from './components/personalInfo/Personalinfo.jsx'
+import Planinfo from './components/planinfo/Planinfo.jsx'
 
 const App = () => {
 
@@ -13,6 +14,7 @@ const App = () => {
       <store.Provider value={[state,dispatch]}>
           <Sidebar/>
           <Personalinfo/>
+          <Planinfo/>
       </store.Provider>
     </main>
   )

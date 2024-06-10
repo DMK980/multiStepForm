@@ -1,0 +1,35 @@
+.main div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.mainhidden{
+    display:none;
+}
+.main p{
+    padding: .5rem 0 0.5rem 0;
+}
+.main section{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1rem 0 0 0;
+}
+.main label{
+    border: 1px solid var(--Coolgray);
+    padding: 0.5rem;
+    background-color: var(--White);
+    display: flex;
+    border-radius: 5px;
+    gap: 0.85rem;
+}
+.main label h4{
+    color: var(--Marineblue);
+}
+.main label .pricing{
+    color: var(--Purplishblue);
+}
+.main section .checked{
+    border: 1px solid var(--Purplishblue);
+    background-color: hsl(228, 100%, 84%,0.3);
+}

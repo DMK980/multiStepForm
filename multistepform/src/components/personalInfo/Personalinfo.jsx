@@ -1,5 +1,6 @@
 import React,{useContext, useRef,useEffect}from 'react'
 import personalinfocss from "./personalinfo.module.css"
+import globalcss from "../../globalcss.module.css"
 import { store } from '../../state'
 
 const Personalinfo = () => {
@@ -45,7 +46,6 @@ const Personalinfo = () => {
             dispatch({type:"NAMEUPDATE",payload:{name:e.target.value}})
         }
         if(e.target.id == "email"){
-            console.log(e.target.value)
             dispatch({type:"EMAILUPDATE",payload:{emailinput:e.target.value}})
         }
         if(e.target.id == "telephone_number"){
@@ -54,9 +54,9 @@ const Personalinfo = () => {
     }
 
     return (
-        <fieldset className={personalinfocss[visible]}ref={fieldset}>
-            <h1>Personal info</h1>
-            <p>Please provide your name, email address, and phone number.</p>
+        <fieldset className={`${personalinfocss[visible]} ${globalcss.Maincontainer}`}ref={fieldset}>
+            <h1 className={`${globalcss.Header}`}>Personal info</h1>
+            <p className={`${globalcss.maindescription}`}>Please provide your name, email address, and phone number.</p>
             <section id="name_container">
                 <label htmlFor="name">Name</label>
                 <p>This field is required</p>

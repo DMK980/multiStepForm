@@ -1,0 +1,43 @@
+.fieldset2{
+    display: block;
+    display: flex;
+    flex-direction: column;
+}
+.fieldset2hidden{
+    display: none;
+}
+.fieldset2 section{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 2rem 0;
+}
+.description{
+    padding-top: 0.5rem ;
+    color: var(--Coolgray);
+}
+
+.planselectmonyr{
+    color: var(--Marineblue);
+}
+.monyr{
+    text-align: center;
+    background-color: hsl(229, 24%, 87%,0.2);
+    color: var(--Coolgray);
+    border-radius: 5px;
+    font-size: clamp(0.8rem,1.5vw,2rem);
+    font-weight: var(--fontweight500);
+}
+.switchthumb{
+    color: yellow;
+}
+@media screen and (min-width:768px) {
+    .fieldset2 section{
+        flex-direction: row;
+        justify-content: center;
+    }
+    .description{
+        font-size: clamp(0.5rem,2vw,2rem);
+    }
+    
+}

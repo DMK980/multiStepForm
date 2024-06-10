@@ -1,0 +1,41 @@
+.Maincontainer{
+    border: 1px solid var(--White);
+    box-shadow:  0px 0px 12px -5px black;
+    padding: 3rem 1rem;
+    color: var(--Coolgray);
+    border-radius: 10px;
+    width: 90%;
+    align-self: center;
+    position:absolute;
+    top:11%;
+    background-color: var(--White);
+    max-width: 390px;
+}
+.Header{
+    color: var(--Marineblue);
+    font-size: clamp(1.5rem,5vw,2.5rem);
+    font-weight: var(--fontweight700);
+}
+
+@media screen and (min-width:768px) {
+    .Maincontainer{
+        position:static;
+        box-shadow: none;
+        align-self: start;
+        width: 100%;
+        max-width: 100%;
+    }
+}
+@media screen and (min-width:1024px) {
+    .Header{
+        font-size: clamp(2.8125rem,3vw,4rem);
+    }
+    .maindescription{
+        font-size: clamp(1.125rem,1vw,2rem);
+    }
+}
+@media screen and (min-width:2560px){
+    .Maincontainer{
+        max-width: 100% !important;
+    }
+}

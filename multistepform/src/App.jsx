@@ -4,6 +4,7 @@ import Sidebar from './components/sidebar/Sidebar.jsx'
 import appcss from "./app.module.css"
 import Personalinfo from './components/personalInfo/Personalinfo.jsx'
 import Planinfo from './components/planinfo/Planinfo.jsx'
+import Addons from './components/addons/Addons.jsx'
 
 const App = () => {
 
@@ -15,6 +16,7 @@ const App = () => {
           <Sidebar/>
           <Personalinfo/>
           <Planinfo/>
+          <Addons/>
       </store.Provider>
     </main>
   )

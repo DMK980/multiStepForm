@@ -3,17 +3,25 @@ import {createContext } from "react";
 export const store = createContext()
 
 export const initialState = {
-    activelink: "select your plan",
+    activelink: "personal info",
+    error: "noerror",
     name: "",
     emailinput: "",
     phonenumber: "",
-    error: "noerror",
     plan: "monthly",
-    selectedplan: "arcade",
+    selectedplan: "Arcade",
+    addons:{
+        "onlineservice":false,
+        "largerstorage":false,
+        "customizableprofile": false
+    },
     planpricing: {
-        arcade:{monthly : "$9",yearly : "$90"},
-        advanced:{monthly : "$12",yearly : "$120"},
-        pro:{monthly : "$15",yearly : "$150"}
+        Arcade:{monthly : "$9",yearly : "$90"},
+        Advanced:{monthly : "$12",yearly : "$120"},
+        Pro:{monthly : "$15",yearly : "$150"},
+        onlineservice:{monthly : "$1",yearly : "$10"},
+        largerstorage:{monthly : "$2",yearly : "$20"},
+        customizableprofile:{monthly : "$2",yearly :"$20"}
     }
 }
 
@@ -50,6 +58,12 @@ export const reducer = (state,action) =>{
                 return {...state,plan:"yearly"}
             }else{
                 return {...state,plan:"monthly"}
+            }
+        case "ADD_ADDONS":
+            if(!state.addons[action.payload]){
+                return {...state,addons:{...state.addons,[`${action.payload}`]:true }}
+            } else {
+                return {...state,addons:{...state.addons,[`${action.payload}`]:false}}
             }
     }
 }

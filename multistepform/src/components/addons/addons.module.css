@@ -1,12 +1,8 @@
-.main div{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
+
 .mainhidden{
     display:none;
 }
-.main p{
+.main .topdescription{
     padding: .5rem 0 0.5rem 0;
 }
 .main section{
@@ -17,19 +13,40 @@
 }
 .main label{
     border: 1px solid var(--Coolgray);
-    padding: 0.5rem;
+    padding: 0.75rem 0.75rem;
     background-color: var(--White);
     display: flex;
+    justify-content: space-between;
     border-radius: 5px;
     gap: 0.85rem;
 }
 .main label h4{
     color: var(--Marineblue);
 }
+.main label .leftcontainer{
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+.main label .info{
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+    font-size: clamp(0.75rem,3vw,1rem);
+}
+.main label .pricing{
+    display: flex;
+    align-items: center;
+    font-size: clamp(0.75rem,3vw,1rem);
+}
 .main label .pricing{
     color: var(--Purplishblue);
 }
-.main section .checked{
+.main section .checkedones{
     border: 1px solid var(--Purplishblue);
     background-color: hsl(228, 100%, 84%,0.3);
+}
+.input:checked{
+    background-color: var(--Purplishblue);
+    font-size: 4rem;
 }

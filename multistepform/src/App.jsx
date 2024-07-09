@@ -5,6 +5,7 @@ import appcss from "./app.module.css"
 import Personalinfo from './components/personalInfo/Personalinfo.jsx'
 import Planinfo from './components/planinfo/Planinfo.jsx'
 import Addons from './components/addons/Addons.jsx'
+import Summary from './components/summary/Summary.jsx'
 
 const App = () => {
 
@@ -17,6 +18,7 @@ const App = () => {
           <Personalinfo/>
           <Planinfo/>
           <Addons/>
+          <Summary/>
       </store.Provider>
     </main>
   )

@@ -3,8 +3,11 @@ import {createContext } from "react";
 export const store = createContext()
 
 export const initialState = {
+    // errorhandling and pagination
     activelink: "personal info",
     error: "noerror",
+
+    // userinput
     name: "",
     emailinput: "",
     phonenumber: "",
@@ -13,12 +16,16 @@ export const initialState = {
     addons:{
         "onlineservice":false,
         "largerstorage":false,
-        "customizableprofile": false
+        "customizableprofile":false
     },
+
+    // pricing data
     planpricing: {
+        // pricing plans
         Arcade:{monthly : "$9",yearly : "$90"},
         Advanced:{monthly : "$12",yearly : "$120"},
         Pro:{monthly : "$15",yearly : "$150"},
+        // options
         onlineservice:{monthly : "$1",yearly : "$10"},
         largerstorage:{monthly : "$2",yearly : "$20"},
         customizableprofile:{monthly : "$2",yearly :"$20"}

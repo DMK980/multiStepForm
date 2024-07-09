@@ -7,7 +7,7 @@
     width: 90%;
     align-self: center;
     position:absolute;
-    top:11%;
+    top:15vh;
     background-color: var(--White);
     max-width: 390px;
 }

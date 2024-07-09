@@ -13,30 +13,30 @@ const Addons = () => {
     useEffect(() => {
         let addonschildren = addonss.current.children 
         if(addons.onlineservice){
-            if(!addonschildren[0].classList.contains(`${addonscss.checked}`)){
-                addonschildren[0].classList.add(`${addonscss.checked}`)
+            if(!addonschildren[0].classList.contains(`${addonscss.checkedones}`)){
+                addonschildren[0].classList.add(`${addonscss.checkedones}`)
             }
         }else{
-            if(addonschildren[0].classList.contains(`${addonscss.checked}`)){
-                addonschildren[0].classList.remove(`${addonscss.checked}`)
+            if(addonschildren[0].classList.contains(`${addonscss.checkedones}`)){
+                addonschildren[0].classList.remove(`${addonscss.checkedones}`)
             }
         }
         if(addons.largerstorage){
-            if(!addonschildren[1].classList.contains(`${addonscss.checked}`)){
-                addonschildren[1].classList.add(`${addonscss.checked}`)
+            if(!addonschildren[1].classList.contains(`${addonscss.checkedones}`)){
+                addonschildren[1].classList.add(`${addonscss.checkedones}`)
             }
         }else{
-            if(addonschildren[1].classList.contains(`${addonscss.checked}`)){
-                addonschildren[1].classList.remove(`${addonscss.checked}`)
+            if(addonschildren[1].classList.contains(`${addonscss.checkedones}`)){
+                addonschildren[1].classList.remove(`${addonscss.checkedones}`)
             }
         }
         if(addons.customizableprofile){
-            if(!addonschildren[2].classList.contains(`${addonscss.checked}`)){
-                addonschildren[2].classList.add(`${addonscss.checked}`)
+            if(!addonschildren[2].classList.contains(`${addonscss.checkedones}`)){
+                addonschildren[2].classList.add(`${addonscss.checkedones}`)
             }
         }else{
-            if(addonschildren[2].classList.contains(`${addonscss.checked}`)){
-                addonschildren[2].classList.remove(`${addonscss.checked}`)
+            if(addonschildren[2].classList.contains(`${addonscss.checkedones}`)){
+                addonschildren[2].classList.remove(`${addonscss.checkedones}`)
             }
         }
         return () => {
@@ -56,39 +56,46 @@ const Addons = () => {
     return (
         <fieldset className={`${globalcss.Maincontainer} ${addonscss[visible]}`}>
             <h1  className={`${globalcss.Header}`}>Pick add-ons</h1>
-            <p >Add-ons help enhance your gaming experience</p>
+            <p className={addonscss.topdescription}>Add-ons help enhance your gaming experience</p>
             <section ref={addonss}>
                 <label htmlFor='onlineservice'>
-                    <div>
-                        <input onChange={onchange}className={`${addonscss.input}`}id="onlineservice"type="checkbox"/>
-                    </div>
-                    <div>
-                        <h4>Online service</h4>
-                        <p>Access to multiplayer games</p>
+                    <div className={addonscss.leftcontainer}>
+                        <div>
+                            <input onChange={onchange}className={`${addonscss.input}`}id="onlineservice"type="checkbox"/>
+                            <span className={addonscss.inputvisual}></span>
+                        </div>
+                        <div className={addonscss.info}>
+                            <h4>Online service</h4>
+                            <p>Access to multiplayer games</p>
+                        </div>
                     </div>
                     <div className={`${addonscss.pricing}`}>
                         {onlineservice}
                     </div>
                 </label>
                 <label htmlFor='largerstorage'>
-                    <div>
-                        <input onChange={onchange}className={`${addonscss.input}`}id="largerstorage"type="checkbox"/>
-                    </div>
-                    <div>
-                        <h4>Larger storage</h4>
-                        <p>Extra 1TB of cloud save</p>
+                    <div className={addonscss.leftcontainer}>
+                        <div>
+                            <input onChange={onchange}className={`${addonscss.input}`}id="largerstorage"type="checkbox"/>
+                        </div>
+                        <div className={addonscss.info}>
+                            <h4 >Larger storage</h4>
+                            <p>Extra 1TB of cloud save</p>
+                        </div>
                     </div>
                     <div className={`${addonscss.pricing}`}>
                         {largerstorage}
                     </div>
                 </label>
                 <label htmlFor='customizableprofile'>
-                    <div>
-                        <input onChange={onchange}className={`${addonscss.input}`}id="customizableprofile"type="checkbox"/>
-                    </div>
-                    <div>
-                        <h4>Customizable profile</h4>
-                        <p>Custom theme on your profile</p>
+                    <div className={addonscss.leftcontainer}>
+                        <div>
+                            <input onChange={onchange}className={`${addonscss.input}`}id="customizableprofile"type="checkbox"/>
+                        </div>
+                        <div className={addonscss.info}>
+                            <h4>Customizable profile</h4>
+                            <p>Custom theme on your profile</p>
+                        </div> 
                     </div>
                     <div className={`${addonscss.pricing}`}>
                         {customizableprofile}

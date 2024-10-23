@@ -1,0 +1,17 @@
+.btncontainer{
+    background-color: var(--White);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    z-index: 1000;
+    grid-area: 2/2;
+    padding: 1rem;
+}
+
+@media screen and (max-width:768px) {
+    .btncontainer{
+        position: absolute;
+        margin: 0 auto;
+        bottom: 0%;
+    }  
+}

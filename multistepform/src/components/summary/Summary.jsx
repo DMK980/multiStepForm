@@ -8,7 +8,7 @@ const Summary = () => {
     const [state,dispatch] = useContext(store)
     let {activelink,selectedplan,plan,addons,planpricing} = state
 
-    let visible = activelink == "summary" ? "main":"mainhidden";
+    let visible = activelink == "summary" ? "main": "mainhidden";
     let monoryr = plan == "monthly" ? "/mo" : "/yr";
 
     let total = Number(planpricing[selectedplan][plan].split("$")[1]) +

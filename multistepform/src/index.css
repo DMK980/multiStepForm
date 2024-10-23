@@ -16,7 +16,7 @@
   --Pastelblue: hsl(228, 100%, 84%);
   --Lightblue: hsl(206, 94%, 87%);
   --Strawberryred: hsl(354, 84%, 57%);
-
+ 
   /* Neutral */ 
   --Coolgray: hsl(231, 11%, 63%);
   --Lightgray: hsl(229, 24%, 87%);
@@ -33,6 +33,7 @@ body{
   display: flex;
   min-height: 100vh;
   min-width: 100vw;
+  background-color: hsl(206, 94%, 87%,0.5);
 }
 #root{
   width: 100%;

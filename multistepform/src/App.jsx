@@ -6,6 +6,8 @@ import Personalinfo from './components/personalInfo/Personalinfo.jsx'
 import Planinfo from './components/planinfo/Planinfo.jsx'
 import Addons from './components/addons/Addons.jsx'
 import Summary from './components/summary/Summary.jsx'
+import Buttoncomp from './components/buttons/Button.jsx'
+import Confirmation from './components/confirmation/Confirmation.jsx'
 
 const App = () => {
 
@@ -19,6 +21,8 @@ const App = () => {
           <Planinfo/>
           <Addons/>
           <Summary/>
+          <Confirmation/>
+          <Buttoncomp/>
       </store.Provider>
     </main>
   )

@@ -7,24 +7,26 @@ import Planinfo from './components/planinfo/Planinfo.jsx'
 import Addons from './components/addons/Addons.jsx'
 import Summary from './components/summary/Summary.jsx'
 import Buttoncomp from './components/buttons/Button.jsx'
-import Confirmation from './components/confirmation/Confirmation.jsx'
+// import Confirmation from './components/confirmation/Confirmation.jsx'
 
 const App = () => {
 
   const [state,dispatch] = useReducer(reducer,initialState)
 
   return (
-    <main className={appcss.main}>
-      <store.Provider value={[state,dispatch]}>
-          <Sidebar/>
-          <Personalinfo/>
-          <Planinfo/>
-          <Addons/>
-          <Summary/>
-          <Confirmation/>
-          <Buttoncomp/>
-      </store.Provider>
-    </main>
+    <div className={appcss.centerdiv}>
+      <main className={appcss.main}>
+        <store.Provider value={[state,dispatch]}>
+            <Sidebar/>
+            <Personalinfo/>
+            <Planinfo/>
+            <Addons/>
+            <Summary/>
+            {/* <Confirmation/> */}
+            <Buttoncomp/>
+        </store.Provider>
+      </main>
+    </div>
   )
 }
 

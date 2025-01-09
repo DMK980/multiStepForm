@@ -60,7 +60,6 @@ const Sidebar = () => {
                     </div>
                 </button>
             </nav>
-
         </aside>
     )
 }
